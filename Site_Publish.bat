@@ -7,7 +7,7 @@ cd /d "C:\Users\UnalD\Desktop\Github\EMSLAB" || exit /b 1
 rmdir _site /s /q
 
 :: Step 3: Build the Jekyll site
-call jekyll build || exit /b 1
+call bundle exec jekyll build || exit /b 1
 
 :: Step 4: Copy _site contents to EMSLAB repo
 xcopy _site\* "C:\Users\UnalD\Desktop\Github\EMSLAB"/s /e /y || exit /b 1
