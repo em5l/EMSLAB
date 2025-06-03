@@ -1,8 +1,9 @@
 source "https://rubygems.org"
 # If you have any plugins, put them here!
-group :jekyll_plugins do
+group :jekyll_plugins do 
   gem "jekyll-feed", "~> 0.12"
-  gem "jekyll-remote-theme"
+  gem "jekyll", "4.2.2"
+  gem "jekyll-remote-theme", "0.4.3"
   gem "jekyll-seo-tag"
   gem "jekyll-sass-converter"
   gem "kramdown-parser-gfm"
