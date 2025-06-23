@@ -4,7 +4,6 @@ title: Movement Control
 nav_order: 4
 grand_parent: Arşivlenen Dosyalar
 parent: Control of Linear Actuators
-permalink: /assets/control-of-linear-actuators/length
 ---
 **Controlling Linear Actuator by Entering Length**
 
