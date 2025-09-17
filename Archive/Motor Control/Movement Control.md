@@ -5,56 +5,58 @@ nav_order: 4
 grand_parent: Archive
 parent: Motor Control
 ---
-
 **Controlling Linear Actuator by Entering Length**
 
 **A4988 Stepper Motor Pins:**
 
-![A4988 Stepper Motor Pins](/assets/media/image1.png){:width="500px"}
+![A4988 Stepper Motor Pins](media/image1.png){:width="500px"}
 
-**Vdd and GND:** Should be connected to the 5v and GND parts of the Arduino.
+  **Vdd and GND:** Should be connected to the 5v and GND parts of the
+  Arduino.
 
-**Vmot and GND:** Should be connected to 12 volt and GND to provide the 12 volt needed by the stepper motor.
+  **Vmot and GND:** Should be connected to 12 volt and GND to provide the
+  12 volt needed by the stepper motor.
 
-**1A,1B,2A,2B:** Pins to which the stepper motor is connected.
+  **1A,1B,2A,2B:** Pins to which the stepper motor is connected.
 
-**Dır:** Controls the direction of the motor.
+  **Dır:** Controls the direction of the motor.
 
-**Step:** Controls the steps.
+  **Step:** Controls the steps.
 
-**MS1, MS2, MS3:** Microstep Selection Pins.
+  **MS1, MS2, MS3:** Microstep Selection Pins.
 
-**Sleep and Reset:** When they are connected to each other, the controller becomes active.
+  **Sleep and Reset:** When they are connected to each other, the
+  controller becomes active.
 
-**En:** When the Enable pin is active, the motor is grounded. We can limit the power usage by making this pin active and passive.
+  **En:** When the Enable pin is active, the motor is grounded. We can
+  limit the power usage by making this pin active and passive.
 
-Micro step Mode   | MS1 | MS2 | MS3                                           
------------------|-----|-----|-----
-Full Step        | low | low | low
-Half Step        | high| low | low
-Quarter Step     | low | high| low
-Eighth Step      | high| high| low
-Sixteenth Step   | high| high| high
+  Micro step Mode   |     MS1         |        MS2            |     MS3                                           
+  Full Step        |   low      |           low          |       low
+  Half Step       |    high       |         low          |       low
+  Quarter Step     |   low         |        high          |      low
+  Eighth Step     |    high | high      |          low | 
+  Sixteenth Step   |   high      |          high           |     high
 
-For one revolution needed steps are calculated as:
+For one revolution needed steps are calculated as;
 
-Full Step mode:
+Full Step mode
 
 $$\frac{360}{1.8{^\circ}} = 200$$
 
-Half step:
+Half step;
 
 $$\frac{360}{0.9{^\circ}} = 400$$
 
-Quarter step:
+Quarter step;
 
 $$\frac{360}{0.45{^\circ}} = 800$$
 
-Eighth step:
+Eighth step;
 
 $$\frac{360}{0.225{^\circ}} = 1600$$
 
-Sixteenth step:
+Sixteenth step;
 
 $$\frac{360}{0.1125{^\circ}} = 3200$$
 
@@ -62,17 +64,22 @@ $$\frac{360}{0.1125{^\circ}} = 3200$$
 
 Stepper motor model is: 17HS4401S
 
-![Stepper Motor](/assets/media/image2.png){:width="600px"}
+![](media/image2.png){:width="600in"}
+
 
 **Trapezoidal lead screw motion principle:**
 
-![Lead Screw Principle](/assets/media/image3.png){:width="500px"}
+![](media/image3.png)
 
-The screw rotates, the nut does not rotate, the nut moves along the screw.
+The screw rotates, the nut does not rotate, the nut moves along the
+screw.
 
 **Linear Actuator:**
 
-Linear actuators are created by properly combining the stepper motor and trapezoidal lead screw. With each step of the stepper motor, the part attached to the screw shaft moves by the length of the Lead. It is used to move a load back and forth.
+Linear actuators are created by properly combining the stepper motor and
+trapezoidal lead screw. With each step of the stepper motor, the part
+attached to the screw shaft moves by the length of the Lead. It is used
+to move a load back and forth.
 
 $$L = p × n_s$$
 
@@ -86,74 +93,106 @@ $$n_s = Number of thread starts.$$
 
 $$toplamAdim = (mmFinal / 8) × stepsPerRevolution$$
 
-The specified `stepsPerRevolution` is the number of steps required for the stepper motor to complete one revolution.
+The specified \'stepsPerRevolution\' is the number of steps required for
+the stepper motor to complete one revolution. The specified
+\'stepsPerRevolution\' is the number of steps required for the stepper
+motor to complete one revolution.
 
-The number of `starts` of the used shaft: $$n_s = 4$$
+$$L = p × n_s$$
+The number of \'starts\' of the used shaft: $$n_s = 4$$
 
 Pitch value of shaft: $$p = 2$$
 
-Lead of thread: $$L = 8$$
+Lead of thread is : $$L = 8$$
 
-So when the `stepsPerRevolution` is completed, the shaft moves 8 mm. By multiplying the formula by 1/8, we ensure that the shaft moves 1 mm when the `stepsPerRevolution` is completed.
+So when the \'stepsPerRevolution\' is completed, the shaft moves 8 mm.
+By multiplying the formula by 1/8, we ensure that the shaft moves 1 mm
+when the \'stepsPerRevolution\' is completed. In this way, we can
+determine the \'mmFinal\' value as the length we want our part to move
+and ensure that it moves at the desired length. When we equate this
+equation to the toplamAdim command, we obtain the number of steps the
+stepper motor must take to cover the specified distance.
 
 **T8 Trapezoidal lead screw:**
 
-![T8 Lead Screw](/assets/media/image4.png){:width="500px"}
+![](media/image4.png){:width="500in"}
 
-**Calculating the force created by the torque applied by the stepper motor on the shaft**
+**Calculating the force created by the torque applied by the stepper
+motor on the shaft**
 
-![Inclined Plane 1](/assets/media/image5.jpeg){:width="500px"}
+In order to find the force created by the motor torque on the pushed
+part, we first need to know the structure of the shaft. Trapezoidal
+shafts are similar in structure to inclined planes. While inclined
+planes gain force, they also cause loss in distance.
 
-![Inclined Plane 2](/assets/media/image6.jpeg){:width="500px"}
+![](media/image5.jpeg){:width="500in"}
 
-h = length of lead: 8 mm  
-D = diameter: 8 mm  
-C = Circumference: π × 8 = 25,13 mm  
-Length of Helix: √(25.13² + 8²) = 26,34 mm
+
+![](media/image6.jpeg){:width="500in"}
+
+
+h = length of lead: 8 mm
+
+D = diameter: 8 mm
+
+C = Circumference: π $\times$ 8 = 25,13 mm
+
+Length of Helix: $\sqrt{25.13^{2} + 8^{2}}$ = 26,34 mm
 
 **Formula for converting stepper motor torque into force**
 
-![Torque to Force Formula](/assets/media/image7.jpg){:width="500px"}
+![](media/image7.jpg){:width="500in"}
+
 
 **Torque work formula and force work formula**
 
-![Torque Work Formula](/assets/media/image8.jpg){:width="500px"}
+![](media/image8.jpg){:width="500in"}
 
-**Equality of the number of turns of the stepper motor and the shaft helix length**
+**Equality of the number of turns of the stepper motor and the shaft
+helix length**
 
-![Helix Length](/assets/media/image9.jpg){:width="500px"}
+![](media/image9.jpg){:width="500in"}
 
-$$T_M = 430\ Nmm$$
+$$T_M = Stepper motor torque: 430Nmm$$
 
-$$h = 8\ mm$$
+$$h = 8 mm$$
 
-$$\sin(\alpha) = h / \text{length of helix} = 0.304 \Rightarrow \alpha = 18^\circ$$
+$$sin(α) = h / length of helix = 0,304 mm =\> α = 18°$$
 
-$$T_M = \frac{8F_N}{2\pi} \Rightarrow F_N = 338.58\ N$$
+$$T_M = (8F_N)/(2π) =\> T_M = 1,27F_N =\> F_N = 338,58 N$$
 
-![Forces on Screw](/assets/media/image10.jpeg){:width="500px"}
+![](media/image10.jpeg){:width="500in"}
 
-$$F_T = F_N \times \sin(18) = 104.62\ N$$
+$$F_T = F_N × sin(18) =\> F_T = 104,62 N$$
 
-$$F_\Ö = F_N \times \cos(18) = 322.01\ N$$
+$$F_Ö = F_N × cos(18) =\> F_Ö = 322.01 N$$
 
-![Forces Diagram](/assets/media/image11.jpeg){:width="500px"}
+![](media/image11.jpeg){:width="500in"}
 
-**When friction force acts:**
+**when friction force acts:**
 
-Real life systems are under the influence of friction force. The situation where the force applied to the nut does not move the nut is called **autoblocking**.
+Real life systems are under the influence of friction force. In order
+for systems to move, they must be under the influence of a force large
+enough to overcome the friction force. The reason why the nut does not
+move on the non-moving nuts of trapezoidal shafts is that there is no
+force large enough to overcome the friction force. The situation where
+the force applied to the nut does not move the nut is called
+**autoblocking.**
 
-Autoblocking requirement:
+autoblocking requirement:
 
 **α ≤ p**
 
 **Linear Actuator:**
 
-![Linear Actuator](/assets/media/image12.jpeg){:width="500px"}
+![](media/image12.jpeg){:width="500in"}
 
-**Controlling Linear Actuator by Entering Length in Arduino Uno**
+**Controlling Linear Actuator by Entering Length in Arduino Uno** (The
+relationship between the motor torque and the force pushing the nut is
+also explained.)
 
 <div class="code-example" markdown="1">
+```
 #define dirPin 6
 #define stepPin 7
 #define controlPin 2
@@ -250,3 +289,4 @@ void loop() {
    }
   }
  }
+```

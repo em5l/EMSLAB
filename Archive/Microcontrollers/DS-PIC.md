@@ -1,7 +1,7 @@
 ---
 layout: default
 title: DS-PIC
-nav_order: 5
+nav_order: 6
 grand_parent: Archive
 parent: Microcontrollers
 ---
