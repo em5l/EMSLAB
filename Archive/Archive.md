@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Control of Linear Actuators
+title: Archive
 nav_order: 3
-parent: Arşivlenen Dosyalar
 has_children: true
---
-PDF Files 
+---
+
+## PDF Files 
 
 [Controlling Linear Actuator by Entering Length](https://em5l.github.io/home/assets/PDF/Mert%20Sürekci(Controlling-Linear-Actuator-by-Entering-Length).pdf)
 
@@ -15,3 +15,10 @@ PDF Files
 
 [Moving Timing Belt Linear Actuator with Joystick](https://em5l.github.io/home/assets/PDF/Mert%20Sürekci(Moving%20the%20Timing%20Belt%20Linear%20Actuator%20with%20Joystick).pdf)
 
+[Osiloskop Kullanım Kılavuzu](https://em5l.github.io/home/assets/PDF/Osiloskop-Rapor.pdf)
+
+## Setup Files
+
+[**mikroprog-pic-dspic-pic32-drivers.zip**](https://em5l.github.io/home/assets/Microcontrollers/PIC/mikroprog-pic-dspic-pic32-drivers.zip)
+
+[**mikroprog-suite-pic-dspic-pic32-programming-software-setup-v290.zip**](https://em5l.github.io/home/assets/Microcontrollers/PIC/mikroprog-suite-pic-dspic-pic32-programming-software-setup-v290.zip)

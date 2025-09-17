@@ -1,8 +1,8 @@
 ---
 layout: default
-title: PIC
+title: DS-PIC
 nav_order: 5
-grand_parent: Arşivlenen Dosyalar
+grand_parent: Archive
 parent: Microcontrollers
 ---
 

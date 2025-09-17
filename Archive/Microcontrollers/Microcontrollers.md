@@ -1,9 +1,7 @@
 ---
 layout: default
-title: Microcontrollers
+title: "Microcontrollers"
 nav_order: 6
-parent: Arşivlenen Dosyalar
+parent: "Archive"
 has_children: true
 ---
-
-

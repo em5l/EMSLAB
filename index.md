@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Anasayfa
+title: Main Page
 nav_order: 1
-description: "Elektromekanik Araştırmaları."
+description: "Electromechanical Systems LAB Archive."
 ---
 
-İzmir katip çelebi üniversitesinde elekromekanik sistemler laboratuvarında öğrenciler tarafından yapılan bütün çalışmaların dökümantasyonlarının sonraki öğrencilere yardımcı olmak amacıyla açık arşivlendiği sitedir.
+This site serves as an open archive of all student projects conducted in the Electromechanical Systems Laboratory at İzmir Katip Çelebi University, providing documentation to assist future students.
 
 ---
