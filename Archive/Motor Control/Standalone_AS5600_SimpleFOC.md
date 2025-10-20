@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AS5600 Magnetic Sensor
+title: SimpleFOC – AS5600 Magnetic Sensor
 nav_order: 4
 grand_parent: Archive
 parent: Motor Control

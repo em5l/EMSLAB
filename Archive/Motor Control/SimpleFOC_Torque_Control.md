@@ -1,6 +1,6 @@
 ---
 layout: default
-title: BLDC Motor Torque Control
+title: SimpleFOC – BLDC Motor Torque Control
 nav_order: 4
 grand_parent: Archive
 parent: Motor Control

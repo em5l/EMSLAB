@@ -1,6 +1,6 @@
 ---
 layout: default
-title: BLDC Motor Velocity Control
+title: SimpleFOC – BLDC Motor Velocity Control
 nav_order: 4
 grand_parent: Archive
 parent: Motor Control

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: BLDC Motor Angle Control
+title: SimpleFOC – BLDC Motor Angle Control
 nav_order: 4
 grand_parent: Archive
 parent: Motor Control
