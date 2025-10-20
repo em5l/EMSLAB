@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Movement Control
+title: Step Motor Control with A4988
 nav_order: 4
 grand_parent: Archive
 parent: Motor Control
