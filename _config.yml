@@ -21,12 +21,12 @@
 title: EMSLAB
 email: unal.dana@ikc.edu.tr
 description: "Electromechanical Systems."
-baseurl: "/home" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://em5l.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: em5l
 # Build settings
 remote_theme: just-the-docs/just-the-docs@v0.7.0
-logo: "/assets/images/Logo2Site.png"
+logo: "/assets/images/EMSLAB.png"
 favicon_ico: "/assets/images/favicon.ico"
 search_enabled: true
 search:
